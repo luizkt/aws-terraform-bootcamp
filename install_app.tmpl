@@ -1,0 +1,6 @@
+#!/bin/bash
+yum update -y
+yum install telnet -y
+yum install docker -y
+service docker start
+sudo docker run --rm -e spring_datasource_url=jdbc:postgresql://${database_endpoint}/bootcamp -e spring_datasource_password=bootcamp2020 -e spring_datasource_username=bootcamp -p 8080:8080 --name prepaid normandesjr/prepaid
